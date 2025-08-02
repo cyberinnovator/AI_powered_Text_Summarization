@@ -22,8 +22,8 @@ RUN apt-get update && apt-get install -y \
 COPY requirements.txt .
 
 # Install Python dependencies
-RUN pip install --no-cache-dir -r requirements.txt \
-    && pip install torch==2.1.2+cpu -f https://download.pytorch.org/whl/cpu/torch_stable.html
+RUN pip install --no-cache-dir -r requirements.txt 
+    
 # Copy the entire app into the container
 COPY . .
 

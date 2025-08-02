@@ -1,8 +1,7 @@
 flask>=2.0
 gunicorn>=20.1.0
 
-# Torch for CPU
-torch==2.1.2+cpu
+torch==2.1.2
 
 # Transformers for model loading
 transformers>=4.40.0
@@ -17,4 +16,3 @@ newspaper3k>=0.2.8
 lxml_html_clean>=0.1.1
 
 # Text pre-processing
-nltk>=3.8.1
