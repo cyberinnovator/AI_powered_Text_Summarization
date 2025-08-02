@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Article Summarizer & Keyword Extractor</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    </head>
+    
+<body>
+    <div class="container">
+        <h2>Summarize News Articles and Extract Keywords</h2>
+        <form method="post">
+            <label for="url">Enter Article URL:</label><br>
+            <input type="text" id="url" name="url" placeholder="https://example.com/article" required><br><br>
+            <input type="submit" value="Analyze">
+        </form>
+
+        {% if summary %}
+        <div class="result">
+            <h3>Summary:</h3>
+            <p>{{ summary }}</p>
+
+            <h3>Keywords:</h3>
+            <ul>
+                {% for keyword in keywords %}
+                    <li>{{ keyword }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
