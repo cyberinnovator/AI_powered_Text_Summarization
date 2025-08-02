@@ -10,14 +10,14 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                checkout([$class: 'GitSCM',
+                retry(3){checkout([$class: 'GitSCM',
                     branches: [[name: '*/main']],
                     userRemoteConfigs: [[
                         url: 'https://github.com/cyberinnovator/AI_powered_Text_Summarization.git',
                         credentialsId: 'github-creds'
                     ]]
                 ])
-            }
+            }}
         }
 
         stage('Build Docker Image') {
